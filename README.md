@@ -24,4 +24,4 @@ Warmer:
 
 
 
-##### [Powered by Darksky](https://www.google.com)
+##### [Powered by Darksky](https://darksky.net/)
