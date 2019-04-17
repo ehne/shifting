@@ -1,3 +1,4 @@
+*note: by default Shifting is set to get weather for Melbourne. You can change this in the code*
 
 ## how to read Shifting
 
