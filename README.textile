@@ -24,3 +24,6 @@ p. *Warmer:*
 
 
 h6. "Powered by Darksky":https://darksky.net/
+
+
+p{color:blue;letter-spacing:.5em}. Spacey blue
