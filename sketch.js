@@ -116,6 +116,8 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
     i++;
   }
   yoff += 0.01;
+  
+  // todo: Rain fx
 
   translate(-(tempLocationArray[tempLocation]), -(height / 2));
   fill('#fff');
