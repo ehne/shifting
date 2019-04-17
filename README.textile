@@ -1,5 +1,5 @@
 
-h2. how to read Shifting
+h2. how to read **Shifting**
 
 p. The background colour represents the temperature (Celcius). The Colour is a section from the gradient below
 
@@ -12,7 +12,7 @@ p. Depending on the position of the blob, you can see if it is colder or warmer.
 
 p. *Colder:*
 
-![left](./images/cold.png "cold")
+!./images/cold.png(cold)
 
 p. *About the same:*
 
