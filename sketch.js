@@ -95,7 +95,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   }
 
   fill(255,25)
-  translate(tempLocationArray[tempLocation], height / 2);
+  translate(tempLocationArray[2], height / 2);
 
   var i = 0
   var v = 5
