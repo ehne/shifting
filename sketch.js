@@ -95,7 +95,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   }
 
   fill(255,25)
-  translate(tempLocationArray[2], height / 2);
+  translate(tempLocationArray[tempLocation], height / 2);
 
   var i = 0
   var v = 5
@@ -123,9 +123,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   fill('#fff');
 
   textAlign(RIGHT);
-  
   text('Powered by Darksky', windowWidth-8, windowHeight-8);
-  textAlign(LEFT);
   //text(temp, 0, 0, 111, 111);
 }
 
