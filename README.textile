@@ -3,12 +3,11 @@ h2. how to read **Shifting**
 
 p. The background colour represents the temperature (Celcius). The Colour is a section from the gradient below
 
-![gradient](./images/bg-gradient.png "gradient")
+!./images/bg-gradient.png(gradient from blue to red)!
 
 // todo: write rain //
 
-p. Something that I think is usefull, is to see if it's what the temperature is compared to yesterday.
-p. Depending on the position of the blob, you can see if it is colder or warmer.
+p. Something that I think is usefull, is to see if it's what the temperature is compared to yesterday. Depending on the position of the blob, you can see if it is colder or warmer.
 
 p. *Colder:*
 
