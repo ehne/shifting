@@ -21,3 +21,7 @@ About the same:
 Warmer:
 
 ![right](./images/hot.png "warmer")
+
+
+
+##### [Powered by Darksky](https://www.google.com)
