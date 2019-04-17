@@ -1,4 +1,3 @@
-Weather is inaccurate, so is *Shifting*.
 
 ## how to read Shifting
 
