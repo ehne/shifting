@@ -5,7 +5,7 @@ p. The background colour represents the temperature (Celcius). The Colour is a s
 
 !./images/bg-gradient.png(gradient from blue to red)!
 
-p>. // todo: write rain //
+bq. // todo: write rain //
 
 p. Something that I think is usefull, is to see if it's what the temperature is compared to yesterday. Depending on the position of the blob, you can see if it is colder or warmer.
 
@@ -25,5 +25,3 @@ p. *Warmer:*
 
 h6. "Powered by Darksky":https://darksky.net/
 
-
-p{color:blue;letter-spacing:.5em}. Spacey blue

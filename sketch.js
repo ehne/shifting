@@ -135,6 +135,6 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   textAlign(RIGHT);
   text('Powered by Darksky', windowWidth-8, windowHeight-8);
   textAlign(LEFT);
-  text("https://nicedoc.io/ehne/shifting", 8, windowHeight-8);
+  text("https://github.com/ehne/shifting", 8, windowHeight-8);
 }
 
