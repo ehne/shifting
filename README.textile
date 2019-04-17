@@ -12,15 +12,15 @@ p. Depending on the position of the blob, you can see if it is colder or warmer.
 
 p. *Colder:*
 
-!./images/cold.png(cold)
+!./images/cold.png(cold)!
 
 p. *About the same:*
 
-![mid](./images/mid.png "about the same")
+!./images/mid.png(about the same)!
 
 p. *Warmer:*
 
-![right](./images/hot.png "warmer")
+!./images/hot.png(warmer)!
 
 
 
