@@ -25,7 +25,7 @@ function setup() {
   frameRate(30);
    createCanvas(windowWidth, windowHeight);
    noStroke();
-
+  console.log(TWO_PI)
    
  
    
@@ -77,9 +77,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
 
   var bgColor = colorTempArray[temp-1];
   background(bgColor);
-  strokeWeight(3);
 
-  stroke(bgColor)
   
  
   //circle(tempLocationArray[tempLocation],windowHeight/2,50)
@@ -99,16 +97,28 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
 
   var i = 0
   var v = 5
+  var firstArray = [0,0]
   while (i <= v) {
     var radius = 200-(v*10) + (i*20);
     beginShape();
     xoff = i*1000;
-    for (var a = 0; a < TWO_PI; a += 0.01) {
+    var firstOffset = map(noise(xoff, yoff), 0, 1, -25, 25);
+    var firstR = radius + firstOffset;
+      var firstX = firstR * cos(0.01);
+      var firstY = firstR * sin(0.01);
+    for (var a = 0; a <= TWO_PI; a += 0.01) {
       let offset = map(noise(xoff, yoff), 0, 1, -25, 25);
       let r = radius + offset;
       let x = r * cos(a);
       let y = r * sin(a);
-      vertex(x, y);
+      ///console.log(a)
+
+        vertex(x, y);
+      
+    
+      
+      
+      
       xoff += 0.02;
       //ellipse(x, y, 4, 4);
     }
@@ -124,6 +134,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
 
   textAlign(RIGHT);
   text('Powered by Darksky', windowWidth-8, windowHeight-8);
-  //text(temp, 0, 0, 111, 111);
+  textAlign(LEFT);
+  text("https://nicedoc.io/ehne/shifting", 8, windowHeight-8);
 }
 
