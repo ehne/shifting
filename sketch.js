@@ -72,7 +72,9 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   if(temp >= 45) {
     temp = 45;
   }
-
+  if(temp <= 0) {
+    temp = 1;
+  }
 
 
   var bgColor = colorTempArray[temp-1];
