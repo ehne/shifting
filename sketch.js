@@ -72,7 +72,7 @@ var tempLocationArray = [windowWidth/4,windowWidth/2,(windowWidth/4)*3]
   if(temp >= 45) {
     temp = 45;
   }
-  if(temp <= 0) {
+  if(temp <= 1) {
     temp = 1;
   }
 
