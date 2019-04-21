@@ -12,10 +12,15 @@ var url;
 // sets default location of blob, can be 0,1,2
 var tempLocation = 1;
 // set rain level 
-var rainLevel = 1;
+var rainLevel = "none";
+// set precipitation probability
+var precipProb = 0.1;
 
 let yoff = 100;
 
+var rain = [];
+var rainingNow = true;
+var bgcolor = (100, 100, 100);
 
 function preload() {
   var lat = "-37.813629";
@@ -34,6 +39,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
   console.log(TWO_PI);
+  
 }
 
 function weatherUpdate(data) {
@@ -64,10 +70,35 @@ function weatherUpdate(data) {
         break;
     }
   }
+  // save rain var
+  precipProb = data.currently.precipProbability;
+
+  if (precipProb<0.25 && precipProb>=0.1) {
+    console.log("low rain");
+    rainLevel = 10;
+  }
+  if (precipProb<0.1 && precipProb>=0.0) {
+    console.log("no rain");
+    rainLevel = 0;
+  }
+  if (precipProb<0.65 && precipProb >= 0.25) {
+    console.log("medium rain");
+    rainLevel = 50;
+  }
+  if (precipProb<=1 && precipProb >=0.65) {
+    console.log("high rain");
+    rainLevel = 150;
+  }
+
+  for (i = 0; i < rainLevel; i++) {
+    rain[i] = new Rain(random(50, windowWidth-50), random(0, -3000));
+  }
 }
 
+ 
 function draw() {
   // contains possible positions of blob. (0,1,2)
+
   var tempLocationArray = [
     windowWidth / 4,
     windowWidth / 2,
@@ -129,15 +160,75 @@ function draw() {
   }
   yoff += 0.01;
 
-  // todo: Rain fx
-  
+
 
   translate(-tempLocationArray[tempLocation], -(height / 2));
+
+  
+
+  ground();
+  if (rainingNow == true) {
+    //background(100);
+    for (i = 0; i < rain.length; i++) {
+      rain[i].dropRain();
+      rain[i].splash();
+    }
+  }
+  noStroke()
   fill("#fff");
 
   textAlign(RIGHT);
   text("Powered by Darksky", windowWidth - 8, windowHeight - 8);
   textAlign(LEFT);
   text("https://github.com/ehne/shifting", 8, windowHeight - 8);
+
 }
 
+function ground() {
+  //noStroke();
+  
+}
+
+function Rain(x, y) {
+  this.x = x;
+  this.y = y;
+  //this.gravity = 9.8;
+  this.length = 15;
+  this.r = 0;
+  this.opacity = 200;
+
+
+  this.dropRain = function() {
+    noStroke();
+    fill(255);
+    rect(this.x, this.y,3,this.length);
+    this.y = this.y + 11 //+ frameCount/60;
+    if (this.y > windowHeight-60) {
+      this.length = this.length - 10;
+      //this.y= random(0,-100);
+    }
+    if (this.length < 0) {
+      this.length = 0;
+    }
+  }
+
+  this.splash = function() {
+    //strokeWeight(2);
+    stroke(245, 200/frameCount);
+    stroke(245, this.opacity);
+    noFill();
+    if (this.y > windowHeight-60) {
+      ellipse(this.x, windowHeight-50, this.r * 2, this.r / 2);
+      this.r++;
+      this.opacity = this.opacity - 10;
+
+      //keep the rain dropping
+      if (this.opacity < 0) {
+        this.y = random(0, -100);
+        this.length = 15;
+        this.r = 0;
+        this.opacity = 200;
+      }
+    }
+  }
+}
